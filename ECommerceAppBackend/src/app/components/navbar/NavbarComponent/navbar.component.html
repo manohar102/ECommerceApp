@@ -1,0 +1,19 @@
+<!--<mat-toolbar color="primary" class="navBar">-->
+<!--  <div>-->
+<!--    <span>ShopSigma</span>-->
+<!--  </div>-->
+<!--  <mat-tab-group #tabGroup>-->
+
+<!--    &lt;!&ndash;  <ngx-mat-select-search></ngx-mat-select-search>&ndash;&gt;-->
+<!--    <mat-tab label="Home" > <app-product-details *ngIf="tabGroup.selectedIndex===0"></app-product-details></mat-tab>-->
+<!--    <mat-tab label="Cart"> Your Cart </mat-tab>-->
+<!--    <mat-tab label="Orders"> Orders </mat-tab>-->
+<!--  </mat-tab-group>-->
+<!--</mat-toolbar >-->
+<nav mat-tab-nav-bar backgroundColor="primary" color="primary">
+  <a mat-tab-link disableRipple><mat-icon>store</mat-icon>ShopSigma</a>
+  <a mat-tab-link routerLink="/products" > Products </a>
+  <a mat-tab-link routerLink="/"> Cart </a>
+  <a mat-tab-link routerLink="/orders"> Orders </a>
+</nav>
+

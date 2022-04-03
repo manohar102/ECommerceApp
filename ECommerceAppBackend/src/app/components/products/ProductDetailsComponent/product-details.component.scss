@@ -1,0 +1,15 @@
+.productImage
+{
+  width: 100%;
+  height: 10vw;
+  object-fit: contain;
+}
+.productDiv
+{
+  transition: all .2s ease-in-out;
+}
+.productDiv:hover
+{
+  transform: scale(1.1);
+  cursor: pointer;
+}

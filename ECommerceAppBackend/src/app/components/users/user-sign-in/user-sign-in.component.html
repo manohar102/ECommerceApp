@@ -1,0 +1,44 @@
+<div *ngIf="user">
+  <mat-card>
+    <mat-card-header >
+      <mat-card-title>Shopping</mat-card-title>
+      <mat-card-subtitle>Get all your needs here</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form >
+        <h2>Login</h2>
+        <mat-error *ngIf="loginInvalid">
+          Invalid Credentials
+        </mat-error>
+        <mat-form-field hideRequiredMarker appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="user.email" name="email" #inp='ngModel' minlength="8" autofocus required>
+
+          <mat-error>
+            <div *ngIf="inp.invalid && (inp.dirty || inp.touched)" class="alert">
+              <div *ngIf="inp.errors?.required">
+                Please provide a Email
+              </div>
+              <div *ngIf="inp.errors?.minlength">
+                Email is too short.
+              </div>
+            </div>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field  hideRequiredMarker appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [(ngModel)]="user.password" name="password" #inp2='ngModel' required>
+          <mat-error>
+            Please provide a password
+          </mat-error>
+        </mat-form-field>
+<!--        <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!(inp.valid && inp2.valid)">Continue</button>-->
+        <button mat-raised-button color="primary" (click)="onSubmit()">Continue</button>
+
+        <br>
+        <a routerLink="/signup"><button disableRipple mat-button color="primary"> Don't have an account ?</button></a>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
